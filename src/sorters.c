@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sorters.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/10 13:23:47 by vantonie         ###   ########.fr       */
+/*   Created: 2022/03/10 13:13:43 by vantonie          #+#    #+#             */
+/*   Updated: 2022/03/10 13:26:09 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include "libft/libft.h"
-
-typedef struct s_stack
+void	small_sort_two(t_ps *ps)
 {
-	int				size;
-	struct s_stake	*next;
-	struct s_stake	*previous;
-}			t_stack;
 
-typedef struct s_ps
+}
+
+void	small_sort_three(t_ps *ps)
 {
-	int		len;
-	char	**stack;
-	t_stack	*a;
-	t_stack *b;
-}			t_ps;
 
-#endif
+}
 
+void	small_sort(t_ps *ps)
+{
+
+}
+
+void	radix_sort(t_ps *ps)
+{
+
+}

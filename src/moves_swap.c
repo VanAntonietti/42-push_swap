@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   moves_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/10 13:23:47 by vantonie         ###   ########.fr       */
+/*   Created: 2022/03/10 13:17:11 by vantonie          #+#    #+#             */
+/*   Updated: 2022/03/10 13:54:35 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-#include "libft/libft.h"
-
-typedef struct s_stack
+void	sa(t_ps *ps)
 {
-	int				size;
-	struct s_stake	*next;
-	struct s_stake	*previous;
-}			t_stack;
+	ft_printf("sa");
+	
+}
 
-typedef struct s_ps
+void	sb(t_ps *ps)
 {
-	int		len;
-	char	**stack;
-	t_stack	*a;
-	t_stack *b;
-}			t_ps;
-
-#endif
-
+	ft_printf("sb");
+}
