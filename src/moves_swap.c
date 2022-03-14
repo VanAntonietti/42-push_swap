@@ -6,19 +6,19 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:17:11 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/10 13:54:35 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/14 16:44:32 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_ps *ps)
-{
-	ft_printf("sa");
+// void	sa(t_ps *ps)
+// {
+// 	ft_printf("sa");
 	
-}
+// }
 
-void	sb(t_ps *ps)
-{
-	ft_printf("sb");
-}
+// void	sb(t_ps *ps)
+// {
+// 	ft_printf("sb");
+// }

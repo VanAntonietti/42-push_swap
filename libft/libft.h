@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:54:35 by vantonie          #+#    #+#             */
-/*   Updated: 2022/02/19 16:01:31 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/14 17:12:54 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -363,9 +363,9 @@ t_list	*ft_lstnew(void *content);
  * @brief Add a new element to the start of the linked list appointed by lst.
  *
  * @param lst list of address of t_lists.
- * @param new elemt to be add to the start of the LST.
+ * @param new_one elemt to be add to the start of the LST.
  */
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new_one);
 
 /**
  * @brief find the length of the linked list appointed by LST
@@ -387,9 +387,9 @@ t_list	*ft_lstlast(t_list *lst);
  * @brief add a new element to the linked list in the end.
  *
  * @param lst appointed a linked list.
- * @param new the new element to be added.
+ * @param new_one the new element to be added.
  */
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new_one);
 
 /**
  * @brief aplies the function DEL to the LST and them free the LST.
@@ -441,5 +441,6 @@ void	ft_printf_u(unsigned int dec, t_len *len);
 void	ft_printf_x(unsigned int hex, t_len *len);
 void	ft_printf_xu(unsigned int hex, t_len *len);
 char	*get_next_line(int fd);
+void	ft_free_ptr(void **ptr);
 
 #endif

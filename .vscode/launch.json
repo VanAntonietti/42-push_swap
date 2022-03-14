@@ -1,0 +1,80 @@
+{
+    // Use o IntelliSense para saber mais sobre os atributos possíveis.
+    // Focalizar para exibir as descrições dos atributos existentes.
+    // Para obter mais informações, acesse: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "lldb 100",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceRoot}/push_swap",
+            "args": [
+                "170","1786","7003","103","349","8639","3595","5071","7370","8382","1399","1884","5834","8821","5236","6377","8637","7312","1667","5641","6449","5636","5349","5622","5106","6065","7505","1687","3361","826","923","354","4062","6442","3444","8433","8744","8205","8232","2882","6096","9581","1309","7283","291","631","8964","7326","1762","6816","3279","1688","9167","868","6104","9472","7507","6899","4992","6962","6403","5030","9453","2842","2231","3492","6768","3259","2137","6056","6342","9724","303","5629","9989","3194","1514","1937","9349","7818","8379","9301","5269","1926","9407","9771","5565","2682","2572","2573","261","8660","8828","9293","4440","260","3559","15","320","3488"
+            ],
+            "cwd": "${workspaceRoot}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/lldb",
+        },
+        {
+            "name": "lldb 50",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceRoot}/push_swap",
+            "args": [
+                "450","583","925","888","153","580","596","612","235","618","547","111","374","911","818","426","323","690","320","595","882","669","979","667","995","923","655","917","564","683","366","147","607","253","300","187","849","912","421","466","459","532","840","369","349","265","691","38","585","286","920","264","587","248","509","902","798","73","163","220","192","416","520","378","431","799","730","889","330","569","258","678","834","948","716","418","233","636","670","497","222","918","731","820","175","804","404","338","24","754","543","973","17","771","746","862","101","315","119","778"
+            ],
+            "cwd": "${workspaceRoot}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/lldb",
+        },
+        {
+            "name": "lldb small",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceRoot}/push_swap",
+            "args": [
+                "10","5","4","2","3","1" , "9", "7", "8"
+            ],
+            "cwd": "${workspaceRoot}",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/lldb",
+        },
+        {
+            "name": "gdb",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceRoot}/push_swap",
+            "args": [
+                "63","97","36","62"," 2","98"," 7","87"," 9","47","67","46","99","14","21","53","51","35","81","83","45","11","41","56","69","60","80","25","22","77","61","84","78","59","90","13","12","58","79"," 8","92","34"," 1","75","71","94","55","39","29","38"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                }
+            ],
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

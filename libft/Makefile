@@ -19,6 +19,7 @@ SRCS_OTHERS	=		ft_printf.c \
 					ft_printf_x.c \
 					ft_printf_xu.c \
 					get_next_line.c \
+					ft_free_ptr.c
 
 OBJS=${SRC:%.c=%.o}
 OBJS_OTHERS=${SRCS_OTHERS:%.c=%.o}

@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/10 14:53:20 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/14 19:07:38 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,30 @@
 # define PUSH_SWAP_H
 
 #include "../libft/libft.h"
+#include <stdio.h>
 
 typedef struct s_stack
 {
-	struct s_stake	*next;
-	struct s_stake	*previous;
+	int				n;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }			t_stack;
 
 typedef struct s_ps
 {
-	int		len;
-	char	**stack;
+	int		size;
+	int		t_argc;
+	char	**t_argv;
 	t_stack	*a;
 	t_stack *b;
 }			t_ps;
 
-int		is_repeated(t_stack	*stack);
-void	sa(t_ps *ps);
-void	sb(t_ps *ps);
-void	push_swap(t_ps *ps);
-void	small_sort_two(t_ps *ps);
-void	small_sort_three(t_ps *ps);
-void	small_sort(t_ps *ps);
-void	radix_sort(t_ps *ps);
+// int		is_repeated(t_stack	*stack);
+// void	sa(t_ps *ps);
+// void	sb(t_ps *ps);
+// void	push_swap(t_ps *ps);
+void	init_struct(t_ps *ps);
+void	free_struct(t_ps *ps);
 
 #endif
 
