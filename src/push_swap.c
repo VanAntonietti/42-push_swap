@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/14 18:34:36 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/16 17:19:53 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@ int	main(int argc, char **argv)
 	t_ps	*ps;
 
 	ps = malloc(sizeof(t_ps));
-	if (ps == NUll);
+	if (ps == NULL)
 		return (1);
 	ps->t_argc = argc;
 	ps->t_argv = argv;
-	init_struct(ps);
-	
+	ps->a = set_linked_list(argv);
+	print_stack(ps->a, ps);
+	// finalize_struct(ps);
+	free(ps);
 	return 0;
 }

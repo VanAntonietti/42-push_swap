@@ -6,7 +6,7 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/03/14 17:01:13 by vantonie         ###   ########.fr        #
+#    Updated: 2022/03/16 23:26:43 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(LIBFT)	
-	$(CC) $(SRC) $(CFLAGS) -I ./header -L ./libft -lft -o $(NAME)
+	$(CC) $(SRC) $(CFLAGS) -I ./header -L ./libft -lft -g3 -o $(NAME)
 
 $(LIBFT):
 	make others -C ./libft
@@ -43,6 +43,7 @@ $(LIBFT):
 clean:
 	rm -f $(LIBFT_OBJS) $(NAME) $(NAME_BONUS)
 	make clean -C ./libft
+	rm -rf push_swap.dSYM
 
 fclean:
 	make fclean -C ./libft
