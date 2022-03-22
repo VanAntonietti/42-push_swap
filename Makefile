@@ -6,7 +6,7 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/03/16 23:26:43 by vantonie         ###   ########.fr        #
+#    Updated: 2022/03/21 21:55:42 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ LIBFT = ./libft/libft.a
 
 FILES = push_swap.c 		\
 		init.c				\
+		list_utils.c		\
 		# push_swap_utils.c 	\
 		# sorters.c 			\
 		# checker.c 			\

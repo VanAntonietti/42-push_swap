@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/16 17:18:35 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/22 00:51:05 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ typedef struct s_ps
 	int		size;
 	int		t_argc;
 	char	**t_argv;
-	node_t	*a;
-	node_t	*b;
+	t_stack	*a;
+	t_stack	*b;
+	t_stack *first;
+	t_stack *last;
+	t_stack *tmp;
 }			t_ps;
 
 // int		is_repeated(t_stack	*stack);
@@ -45,11 +48,12 @@ typedef struct s_ps
 // void	push_swap(t_ps *ps);
 void	init_struct(t_ps *ps);
 void	finalize_struct(t_ps *ps);
+void	others_nodes(t_ps *ps);
 void	init_list(t_ps *ps);
-void	init_list(t_ps *ps);
-void	link_list(t_ps *ps, t_stack *first, t_stack *last);
-void	print_stack(node_t *stack, t_ps *ps);
-struct node *set_linked_list(char **av);
-void others_nodes(char **av, node_t *node_first, node_t *node_last, node_t *node);
+void	init_struct(t_ps *ps);
+void	print_stack(t_ps *ps, t_stack *stack);
+void	add_on_top(t_stack *stack_one, t_stack *stack_two);
+void	delete_first_node (t_stack *stack_one, t_stack *stack_two);
+
 #endif
 
