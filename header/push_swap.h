@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/22 00:51:05 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:49:45 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,40 @@ typedef struct s_ps
 	int		size;
 	int		t_argc;
 	char	**t_argv;
+	int		counter_a;
+	int		counter_b;
+	t_bool	sorted;
+	t_bool	repeated;
+	t_bool	overflow;
+	t_bool	letter;
 	t_stack	*a;
 	t_stack	*b;
 	t_stack *first;
 	t_stack *last;
-	t_stack *tmp;
 }			t_ps;
 
-// int		is_repeated(t_stack	*stack);
-// void	sa(t_ps *ps);
-// void	sb(t_ps *ps);
-// void	push_swap(t_ps *ps);
-void	init_struct(t_ps *ps);
-void	finalize_struct(t_ps *ps);
-void	others_nodes(t_ps *ps);
 void	init_list(t_ps *ps);
 void	init_struct(t_ps *ps);
-void	print_stack(t_ps *ps, t_stack *stack);
-void	add_on_top(t_stack *stack_one, t_stack *stack_two);
-void	delete_first_node (t_stack *stack_one, t_stack *stack_two);
+void	others_nodes(t_ps *ps);
+void	print_stack(t_stack *stack, int counter);
+void	finalize_struct(t_ps *ps);
+void	delete_stack(t_stack *stack);
+
+/*  ||							//\\ ERRORS //\\						||  */
+int		checker(t_ps *ps);
+void	is_repeated(t_ps *ps);
+void	is_sorted(t_ps *ps);
+void	is_overflow(t_ps *ps);
+void	is_letter(t_ps *ps);
+
+/*  ||							//\\ MOVES //\\							||  */
+void	move_pa(t_ps *ps);
+void	move_pb(t_ps *ps);
+void	move_ra(t_ps *ps);
+void	move_rb(t_ps *ps);
+void	move_rr(t_ps *ps);
+void	move_rra(t_ps *ps);
+void	move_rrb(t_ps *ps);
+void	move_rrr(t_ps *ps);
 
 #endif
-

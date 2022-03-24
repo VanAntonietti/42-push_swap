@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/21 23:27:44 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:24:14 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,21 @@ void	init_list(t_ps *ps)
 	ps->last = ps->a;
 	ps->a = ps->a->next;
 	ps->a->prev = ps->last;
+	is_sorted(ps);
 }
 
 void	init_struct(t_ps *ps)
 {
 	ps->a = malloc(sizeof(t_stack));
-	ps->b = malloc(sizeof(t_stack));
+	ps->b = NULL;
 	ps->first = malloc(sizeof(t_stack));
 	ps->last = malloc(sizeof(t_stack));
-	ps->tmp = malloc(sizeof(t_stack));
+	ps->counter_a = ps->t_argc - 1;
+	ps->counter_b = 0;
+	ps->sorted = TRUE;
+	ps->repeated = FALSE;
+	ps->overflow = FALSE;
+	ps->letter = FALSE;
 }
 
 void	finalize_struct(t_ps *ps)
@@ -58,6 +64,4 @@ void	finalize_struct(t_ps *ps)
 	free(ps->b);
 	free(ps->first);
 	free(ps->last);
-	free(ps->tmp);
-	// ft_free_ptr((void **)ps->b);
 }
