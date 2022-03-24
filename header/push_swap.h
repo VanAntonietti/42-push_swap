@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 05:17:09 by an7onie77i       ###   ########.fr       */
+/*   Updated: 2022/03/24 17:25:57 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,6 @@
 #include "../libft/libft.h"
 #include <stdio.h>
 
-typedef struct node
-{
-    int data;
-    struct node *next;
-    struct node *prev;
-} node_t;
-
 typedef struct s_stack
 {
 	int				n;
@@ -30,9 +23,17 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }			t_stack;
 
+typedef struct s_sort
+{
+	int	maxbitshift;
+	int	x;
+	int	y;
+	int	placeholder;
+	
+}			t_sort;
+
 typedef struct s_ps
 {
-	int		size;
 	int		t_argc;
 	char	**t_argv;
 	int		counter_a;
@@ -45,14 +46,23 @@ typedef struct s_ps
 	t_stack	*b;
 	t_stack *first;
 	t_stack *last;
+	t_sort	*sort;
 }			t_ps;
 
-void	init_list(t_ps *ps);
+
+/*  ||							//\\ HELPERS //\\						||  */
 void	init_struct(t_ps *ps);
+void	init_list(t_ps *ps);
 void	others_nodes(t_ps *ps);
-void	print_stack(t_stack *stack, int counter);
 void	finalize_struct(t_ps *ps);
 void	delete_stack(t_stack *stack);
+void	print_stack(t_stack *stack, int counter);
+
+/*  ||							//\\ SORTERS //\\						||  */
+void	push_swap(t_ps *ps);
+void	quick_sort(t_ps *ps);
+void	radix_sort(t_ps *ps);
+
 
 /*  ||							//\\ ERRORS //\\						||  */
 int		checker(t_ps *ps);

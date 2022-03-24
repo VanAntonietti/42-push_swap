@@ -3,27 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 05:15:26 by an7onie77i       ###   ########.fr       */
+/*   Updated: 2022/03/24 18:34:21 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	push_swap(t_ps *ps)
+{
+	if(ps->t_argc == 0)
+	{
+		ft_printf("To few arguments, please, provide a list to be sorted.\n");
+	}
+	if(ps->t_argc < 10 && ps->t_argv > 0)
+	{
+		quick_sort(ps);
+	}
+	if(ps->t_argc > 10)
+	{
+		radix_sort(ps);
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_ps	*ps;
-
+	
 	ps = malloc(sizeof(t_ps));
-	if (ps == NULL)
-		return (1);
 	ps->t_argc = argc;
 	ps->t_argv = argv;
 	init_struct(ps);
 	init_list(ps);
-	checker(ps);
+	if(checker(ps) == 0)
+	{
+		push_swap(ps);
+	}
+	// print_stack(ps->a, ps->counter_a);
+	// print_stack(ps->b, ps->counter_b);
 	// finalize_struct(ps);
 	free(ps);
 	return 0;

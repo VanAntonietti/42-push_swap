@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:19:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 05:21:09 by an7onie77i       ###   ########.fr       */
+/*   Updated: 2022/03/24 17:44:23 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	checker(t_ps *ps)
 	is_letter(ps);
 	if(ps->letter == TRUE)
 	{
-		ft_printf("Error\nThere is a letter in the list, please, use only numbers.\n");
+		ft_printf("Error\nThere is a invalid character in the list, please, use only numbers.\n");
 	}
 	is_repeated(ps);
 	if(ps->repeated == TRUE)
@@ -79,7 +79,7 @@ void	is_repeated(t_ps *ps)
 		j = i + 1;
 		while(j < ps->t_argc)
 		{
-			if(*ps->t_argv[i] == *ps->t_argv[j])
+			if(ps->t_argv[i] == ps->t_argv[j])
 				ps->repeated = TRUE;
 			j++;
 		}
@@ -101,6 +101,3 @@ void	is_sorted(t_ps *ps)
 	}
 	ps->a = ps->a->next;
 }
-
-
-
