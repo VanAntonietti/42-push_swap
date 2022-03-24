@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:54:35 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/14 17:12:54 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 05:00:17 by an7onie77i       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -442,5 +442,6 @@ void	ft_printf_x(unsigned int hex, t_len *len);
 void	ft_printf_xu(unsigned int hex, t_len *len);
 char	*get_next_line(int fd);
 void	ft_free_ptr(void **ptr);
+long	ft_strtol(char *str);
 
 #endif

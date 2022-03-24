@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/23 21:22:41 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 05:15:26 by an7onie77i       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 	init_struct(ps);
 	init_list(ps);
 	checker(ps);
-	
 	// finalize_struct(ps);
 	free(ps);
 	return 0;

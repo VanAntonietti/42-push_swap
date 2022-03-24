@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/23 21:49:45 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 05:17:09 by an7onie77i       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,10 @@ void	delete_stack(t_stack *stack);
 
 /*  ||							//\\ ERRORS //\\						||  */
 int		checker(t_ps *ps);
-void	is_repeated(t_ps *ps);
-void	is_sorted(t_ps *ps);
 void	is_overflow(t_ps *ps);
 void	is_letter(t_ps *ps);
+void	is_repeated(t_ps *ps);
+void	is_sorted(t_ps *ps);
 
 /*  ||							//\\ MOVES //\\							||  */
 void	move_pa(t_ps *ps);
