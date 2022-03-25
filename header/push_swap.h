@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 17:25:57 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 22:23:19 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ typedef struct s_stack
 
 typedef struct s_sort
 {
-	int	maxbitshift;
+	int max_number;
+	int	max_bitshift;
 	int	x;
 	int	y;
 	int	placeholder;
@@ -57,6 +58,9 @@ void	others_nodes(t_ps *ps);
 void	finalize_struct(t_ps *ps);
 void	delete_stack(t_stack *stack);
 void	print_stack(t_stack *stack, int counter);
+void	print_binary(int binary);
+void	find_binary(t_ps *ps);
+int		radix_bit_discover(int n);
 
 /*  ||							//\\ SORTERS //\\						||  */
 void	push_swap(t_ps *ps);

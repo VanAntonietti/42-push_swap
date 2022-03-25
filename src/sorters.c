@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:13:43 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 19:14:59 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 23:07:35 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,46 @@
 
 static void	positive_radix(t_ps *ps)
 {
-	int	i;
+	int i;
 	int	j;
-	
-	i = 1;
-	while (i <= ps->t_argc - 1)
-	{
-		if ((ps->a->n >> ps->sort->y) & 1)
-		{
-			move_pb(ps);
-			move_rb(ps);
-			ps->sort->y++;
-		}
-		else 
-		{
-			move_ra(ps);
-		}
-		i++;
-	}
-	if (ps->b != NULL)
+	// ps->sort->max_bitshift = ps->sort->max_bitshift +;
+	i = 0;
+	while(i <= ps->sort->max_bitshift)
 	{
 		j = 0;
-		while (j < ps->sort->y) 
+		while(j < ps->t_argc)
+		{
+			
+			// printf("%d -> %d\n", ps->a->n, ps->a->n >> i & 1);
+			if( ps->a->n >> (ps->sort->max_bitshift - i)& 1)
+				move_ra(ps);
+			else
+			{
+				move_pb(ps);
+			}
+			j++;
+		}
+		while(ps->counter_b > 0)
 		{
 			move_pa(ps);
 			move_ra(ps);
-			j++;
 		}
+		i++;
+		// printf("%d\n", ps->sort->max_bitshift);
 	}
+	
 }
-
+int	radix_bit_discover(int n)
+{	
+	int	i;
+	
+	i = 0;
+	while(n >> i != 0)
+	{
+		i++;
+	}
+	return(i);
+}	
 // static void	negative_radix(t_ps *ps)
 // {
 // 	printf("você não deveria estar vendo isso");
@@ -58,13 +68,6 @@ void	quick_sort(t_ps *ps)
 
 void	radix_sort(t_ps *ps)
 {
-	ps->sort->x = 0;
-	while(ps->sort->x < 31)
-	{
-		ps->sort->y = 0;
-		positive_radix(ps);
-		ps->sort->x++;
-	}
-	ps->sort->y = 0;
-	// negative_radix(ps);
+	find_binary(ps);
+	positive_radix(ps);
 }

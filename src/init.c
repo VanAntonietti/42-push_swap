@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 17:46:13 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 21:06:07 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	init_struct(t_ps *ps)
 	ps->repeated = FALSE;
 	ps->overflow = FALSE;
 	ps->letter = FALSE;
+	ps->sort->max_number = 0;
 }
 
 void	finalize_struct(t_ps *ps)

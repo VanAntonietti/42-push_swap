@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 18:34:21 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 21:20:15 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,32 @@ int	main(int argc, char **argv)
 {
 	t_ps	*ps;
 	
+	// int		i;
+	// int		j;
+	// int		k;
+	// int		l;
+	// int		m;
+	// int		n;
+	
+	// i = 42;
+	// j = i >> 1;
+	// k = i >> 2;
+	// l = i >> 3;
+	// m = i >> 4;
+	// n = i >> 5;
+	
+	// print_binary(i);
+	// printf("\n");
+	// print_binary(j);
+	// printf("\n");
+	// print_binary(k);
+	// printf("\n");
+	// print_binary(l);
+	// printf("\n");
+	// print_binary(m);
+	// printf("\n");
+	// print_binary(n);
+	// printf("\n");
 	ps = malloc(sizeof(t_ps));
 	ps->t_argc = argc;
 	ps->t_argv = argv;
@@ -40,9 +66,7 @@ int	main(int argc, char **argv)
 	if(checker(ps) == 0)
 	{
 		push_swap(ps);
-	}
-	// print_stack(ps->a, ps->counter_a);
-	// print_stack(ps->b, ps->counter_b);
+	}	
 	// finalize_struct(ps);
 	free(ps);
 	return 0;

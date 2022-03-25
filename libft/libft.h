@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: an7onie77i <an7onie77i@student.42.fr>      +#+  +:+       +#+        */
+/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 17:54:35 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 05:00:17 by an7onie77i       ###   ########.fr       */
+/*   Updated: 2022/03/24 20:47:59 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,17 @@ typedef enum e_bool {TRUE = 1, FALSE = 0}	t_bool;
 # define DEC "0123456789"
 # define HEX "0123456789ABCDEF"
 # define HEX_L "0123456789abcdef"
+
+# define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
+# define BYTE_TO_BINARY(byte)	\
+	(byte & 0x80 ? '1' : '0'), \
+	(byte & 0x40 ? '1' : '0'), \
+	(byte & 0x20 ? '1' : '0'), \
+	(byte & 0x10 ? '1' : '0'), \
+	(byte & 0x08 ? '1' : '0'), \
+	(byte & 0x04 ? '1' : '0'), \
+	(byte & 0x02 ? '1' : '0'), \
+	(byte & 0x01 ? '1' : '0')
 
 # ifndef FD_SIZE
 #  define FD_SIZE 256
