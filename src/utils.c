@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 21:31:29 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 21:05:43 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/24 23:23:49 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,16 @@ void	print_binary(int binary)
 
 void	find_binary(t_ps *ps)
 {
+	t_stack *stack;
 	int	i;
 	
+	stack = ps->a;
 	i = 0;
 	while(i < ps->t_argc - 1)
 	{
-		if(ps->a->n > ps->sort->max_number)
-			ps->sort->max_number = ps->a->n;
-		ps->a = ps->a->next;
+		if(stack->n > ps->sort->max_number)
+			ps->sort->max_number = stack->n;
+		stack = stack->next;
 		i++;
 	}
 	while(ps->sort->max_number >> ps->sort->max_bitshift != 0)

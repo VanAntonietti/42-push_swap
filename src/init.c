@@ -6,13 +6,13 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 21:06:07 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:50:56 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	others_nodes(t_ps *ps)
+static void	others_nodes(t_ps *ps)
 {
 	t_stack *stack_next;
 	int		i;
@@ -41,15 +41,14 @@ void	init_list(t_ps *ps)
 	ps->last = ps->a;
 	ps->a = ps->a->next;
 	ps->a->prev = ps->last;
-	is_sorted(ps);
 }
 
 void	init_struct(t_ps *ps)
 {
 	ps->a = malloc(sizeof(t_stack));
 	ps->b = NULL;
-	ps->first = malloc(sizeof(t_stack));
-	ps->last = malloc(sizeof(t_stack));
+	ps->first = NULL;
+	ps->last = NULL;
 	ps->sort = malloc(sizeof(t_sort));
 	ps->counter_a = ps->t_argc - 1;
 	ps->counter_b = 0;

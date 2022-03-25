@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:17:10 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 21:59:35 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:52:07 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ void	move_rr(t_ps *ps)
 	ps->a = ps->a->next;
 	ps->b = ps->b->next;
 	ft_printf("rr\n");
-	
 }

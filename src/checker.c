@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:19:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 17:44:23 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/25 15:23:50 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	checker(t_ps *ps)
 	is_sorted(ps);
 	if(ps->sorted == TRUE)
 	{	
-		ft_printf("Error\nThe list is already sorted, please, use a unsorted list.\n");
+		// ft_printf("Error\nThe list is already sorted, please, use a unsorted list.\n");
 		return (1);
 	}
 	return (0);
