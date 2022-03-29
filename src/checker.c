@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:19:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/25 15:23:50 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/28 21:29:16 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	checker(t_ps *ps)
 	is_letter(ps);
 	if(ps->letter == TRUE)
 	{
-		ft_printf("Error\nThere is a invalid character in the list, please, use only numbers.\n");
+		ft_printf("Error\nThere is an invalid character in the list, please, use only numbers.\n");
 	}
 	is_repeated(ps);
 	if(ps->repeated == TRUE)
@@ -33,7 +33,7 @@ int	checker(t_ps *ps)
 	is_sorted(ps);
 	if(ps->sorted == TRUE)
 	{	
-		// ft_printf("Error\nThe list is already sorted, please, use a unsorted list.\n");
+		ft_printf("Error\nThe list is already sorted, please, use a unsorted list.\n");
 		return (1);
 	}
 	return (0);
@@ -62,7 +62,8 @@ void	is_letter(t_ps *ps)
 	i = 1;
 	while(i < ps->t_argc)
 	{
-		if(*ps->t_argv[i] < '0' || *ps->t_argv[i] > '9')
+		if((*ps->t_argv[i] < '0' && *ps->t_argv[i] > '-') || *ps->t_argv[i] > '9' 
+			|| *ps->t_argv[i] < '-')
 			ps->letter = TRUE;
 		i++;
 	}
@@ -74,7 +75,7 @@ void	is_repeated(t_ps *ps)
 	int	j;
 	
 	i = 0;
-	while (i < ps->t_argc)
+	while (i < ps->t_argc - 1)
 	{
 		j = i + 1;
 		while(j < ps->t_argc)
@@ -92,6 +93,7 @@ void	is_sorted(t_ps *ps)
 	int	i;
 	
 	i = 1;
+	ps->sorted = TRUE;
 	while(i < ps->t_argc - 1)
 	{
 		if (ps->a->n > ps->a->next->n)

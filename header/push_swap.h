@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/25 20:06:01 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:25:48 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ void	move_rrr(t_ps *ps);
 void	move_sa(t_ps *ps);
 void	move_sb(t_ps *ps);
 void	move_ss(t_ps *ps);
+
+unsigned int count_bits(int n);
 
 #endif

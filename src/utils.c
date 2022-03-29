@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_utils.c                                       :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 21:31:29 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/24 23:23:49 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:26:07 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,39 @@ void	print_stack(t_stack *stack, int counter)
 		i++;
 	}
 }
+
 void	print_binary(int binary)
 {
 	printf("%d in binary is " BYTE_TO_BINARY_PATTERN, binary,
 			BYTE_TO_BINARY(binary));
 }
 
+unsigned int count_bits(int n)
+{
+	unsigned int i;
+	i = 0;
+	while(n < -1 || n > 0)
+	{
+		i++;
+		n >>= 1;
+	}
+	return(i);
+}
+
 void	find_binary(t_ps *ps)
 {
 	t_stack *stack;
-	int	i;
+	int		i;
+	int		max_bit_temp;
 	
-	stack = ps->a;
 	i = 0;
-	while(i < ps->t_argc - 1)
+	stack = ps->a;
+	while(i < ps->counter_a)
 	{
-		if(stack->n > ps->sort->max_number)
-			ps->sort->max_number = stack->n;
-		stack = stack->next;
+		max_bit_temp = count_bits(stack->n);
+		if(max_bit_temp > ps->sort->max_bitshift)
+			ps->sort->max_bitshift = max_bit_temp;
 		i++;
+		stack = stack->next;
 	}
-	while(ps->sort->max_number >> ps->sort->max_bitshift != 0)
-	{
-		ps->sort->max_bitshift++;
-	}
-	
 }

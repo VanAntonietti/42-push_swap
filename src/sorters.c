@@ -6,24 +6,29 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:13:43 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/25 21:14:59 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:11:52 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	positive_radix(t_ps *ps)
+void	radix_sort(t_ps *ps)
 {
+	
 	int i;
 	int	j;
 	
 	i = 0;
-	while(i < ps->sort->max_bitshift)
+	find_binary(ps);
+	while(i < (ps->sort->max_bitshift + 1))
 	{
+		is_sorted(ps);
+		if(ps->sorted == TRUE)
+			break;
 		j = 0;
 		while(j < ps->t_argc - 1)
 		{
-			if(( ps->a->n >> i & 1) == 1)
+			if((ps->a->n >> i & 1) == 1)
 				move_ra(ps);
 			else
 			{
@@ -37,22 +42,19 @@ static void	positive_radix(t_ps *ps)
 		}
 		i++;
 	}
+	if(ps->sorted == FALSE)
+	{
+		while(ps->sorted == FALSE)
+		{
+			move_ra(ps);
+			is_sorted(ps);
+		}
+	}	
 }
 
-// static void	negative_radix(t_ps *ps)
-// {
-// 	printf("você não deveria estar vendo isso");
-// 	ps->sort->placeholder = 1;
-// }
 
 void	quick_sort(t_ps *ps)
 {
 	printf("você não deveria estar vendo isso quick");
 	ps->sort->placeholder = 1;
-}
-
-void	radix_sort(t_ps *ps)
-{
-	find_binary(ps);
-	positive_radix(ps);
 }

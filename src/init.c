@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/25 19:50:56 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/28 20:22:24 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	init_struct(t_ps *ps)
 	ps->sort = malloc(sizeof(t_sort));
 	ps->counter_a = ps->t_argc - 1;
 	ps->counter_b = 0;
-	ps->sorted = TRUE;
+	ps->sorted = FALSE;
 	ps->repeated = FALSE;
 	ps->overflow = FALSE;
 	ps->letter = FALSE;
