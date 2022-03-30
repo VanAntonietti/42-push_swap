@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/28 20:22:24 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:47:10 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	others_nodes(t_ps *ps)
 	i = 2;
 	while (ps->t_argv[i] != NULL)
 	{
+		
 		stack_next = malloc(sizeof(t_stack));
 		stack_next->n = atoi(ps->t_argv[i]);
 		stack_next->next = ps->first;
@@ -27,6 +28,8 @@ static void	others_nodes(t_ps *ps)
 		ps->last = ps->a;
 		ps->a = ps->a->next;
 		ps->a->prev = ps->last;
+		ps->origin[i - 1] = ps->a->n;
+		ps->a->edited = FALSE;
 		i++;
 	}
 }
@@ -37,6 +40,8 @@ void	init_list(t_ps *ps)
 	ps->a->prev = ps->a;
 	ps->a->next = ps->a;
 	ps->first = ps->a;
+	ps->origin[0] = ps->a->n;
+	ps->a->edited = FALSE;
 	others_nodes(ps);
 	ps->last = ps->a;
 	ps->a = ps->a->next;
@@ -57,6 +62,7 @@ void	init_struct(t_ps *ps)
 	ps->overflow = FALSE;
 	ps->letter = FALSE;
 	ps->sort->max_number = 0;
+	ps->origin = (malloc(ps->t_argc - 1*(sizeof(int))));
 }
 
 void	finalize_struct(t_ps *ps)

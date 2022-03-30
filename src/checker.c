@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:19:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/28 21:29:16 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:17:25 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,16 +90,18 @@ void	is_repeated(t_ps *ps)
 
 void	is_sorted(t_ps *ps)
 {
+	t_stack *stack;
 	int	i;
 	
 	i = 1;
+	stack = ps->a;
 	ps->sorted = TRUE;
 	while(i < ps->t_argc - 1)
 	{
-		if (ps->a->n > ps->a->next->n)
+		if (stack->n > stack->next->n)
 			ps->sorted = FALSE;
-		ps->a = ps->a->next;
+		stack = stack->next;
 		i++;
 	}
-	ps->a = ps->a->next;
+	stack = stack->next;
 }

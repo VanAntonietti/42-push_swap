@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/29 19:25:48 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/30 17:55:52 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,23 @@ typedef struct s_stack
 	int				n;
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	t_bool			edited;
 }			t_stack;
 
 typedef struct s_sort
 {
 	int max_number;
 	int	max_bitshift;
-	int	placeholder;
 	
 }			t_sort;
 
 typedef struct s_ps
 {
+	int		*origin;
 	int		t_argc;
-	char	**t_argv;
 	int		counter_a;
 	int		counter_b;
+	char	**t_argv;
 	t_bool	sorted;
 	t_bool	repeated;
 	t_bool	overflow;
@@ -61,8 +62,10 @@ void	find_binary(t_ps *ps);
 
 /*  ||							//\\ SORTERS //\\						||  */
 void	push_swap(t_ps *ps);
-void	quick_sort(t_ps *ps);
+void	small_sort(t_ps *ps);
+void	medium_sort(t_ps *ps);
 void	radix_sort(t_ps *ps);
+void	sorters(t_ps *ps);
 
 /*  ||							//\\ ERRORS //\\						||  */
 int		checker(t_ps *ps);
@@ -85,5 +88,8 @@ void	move_sb(t_ps *ps);
 void	move_ss(t_ps *ps);
 
 unsigned int count_bits(int n);
+void quickSort(int arr[], int low, int high);
+int	find_position(t_ps *ps, int n, t_stack *stack);
+int normalize(t_ps *ps);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/03/25 13:49:12 by vantonie         ###   ########.fr        #
+#    Updated: 2022/03/30 16:38:22 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ FILES = push_swap.c 	\
 		moves_rotate.c	\
 		moves_reverse.c	\
 		checker.c		\
-		sorters.c
+		sorters.c		\
+		quick_sort.c
 
 SRC=$(addprefix src/, $(FILES))
 

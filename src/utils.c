@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 21:31:29 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/29 19:26:07 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/30 16:51:21 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,49 @@ void	find_binary(t_ps *ps)
 		i++;
 		stack = stack->next;
 	}
+}
+
+int	find_position(t_ps *ps, int n, t_stack *stack)
+{
+	int		i;
+	
+	i = 0;
+	while(i < ps->counter_a)
+	{
+		if(stack->n == n && stack->edited == FALSE)
+		{
+			stack->edited = TRUE;
+			return(i);
+		}
+		i++;
+		stack = stack->next;
+	}
+	return(-1);
+}
+
+int normalize(t_ps *ps)
+{
+	int		i;
+	t_stack *tmp;
+	int		position;
+	
+	i = 0;
+	quickSort(ps->origin, 0, ps->counter_a - 1);
+	while(i < ps->counter_a)
+	{
+		tmp = ps->a;
+		position = find_position(ps,ps->origin[i], tmp);
+		if(position == -1)
+		{
+			return(-1);
+		}
+		while(position > 0)
+		{
+			tmp = tmp->next;
+			position--;
+		}
+		tmp->n = i;
+		i++;
+	}
+	return(0);
 }
