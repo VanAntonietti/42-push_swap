@@ -44,8 +44,8 @@
             "request": "launch",
             "program": "${workspaceRoot}/push_swap",
             "args": [
-                "2","1","3","10","9"
-            ],
+                "5", "6", "17", "8", "9", "3", "11", "10", "1", "7", "15", "0", "19", "16", "2", "12", "14", "18", "4", "13"
+                     ],
             "cwd": "${workspaceRoot}",
             "setupCommands": [
                 {

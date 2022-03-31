@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/30 16:47:10 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 16:24:08 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ static void	others_nodes(t_ps *ps)
 	i = 2;
 	while (ps->t_argv[i] != NULL)
 	{
-		
 		stack_next = malloc(sizeof(t_stack));
-		stack_next->n = atoi(ps->t_argv[i]);
+		stack_next->n = ft_strtol(ps->t_argv[i]);
 		stack_next->next = ps->first;
 		ps->a->next = stack_next;
 		ps->last = ps->a;
@@ -51,6 +50,8 @@ void	init_list(t_ps *ps)
 void	init_struct(t_ps *ps)
 {
 	ps->a = malloc(sizeof(t_stack));
+	if(ps->a == NULL)
+		printf("Error");
 	ps->b = NULL;
 	ps->first = NULL;
 	ps->last = NULL;
