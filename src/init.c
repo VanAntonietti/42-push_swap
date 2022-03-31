@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:04:21 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:39:48 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	others_nodes(t_ps *ps)
 {
-	t_stack *stack_next;
+	t_stack	*stack_next;
 	int		i;
 
 	i = 2;
@@ -64,9 +64,9 @@ void	init_struct(t_ps *ps)
 
 void	finalize_struct(t_ps *ps)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	while(ps->counter_a > 0)
+	while (ps->counter_a > 0)
 	{
 		tmp = ps->a->next;
 		free((void *)ps->a);

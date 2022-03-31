@@ -6,19 +6,18 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:17:11 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 16:24:54 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:30:32 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void move_sa(t_ps *ps)
+void	move_sa(t_ps *ps)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	
 	if (ps->a == NULL)
-		return;
+		return ;
 	tmp = ps->a->next->next;
 	tmp->prev = ps->a;
 	ps->a->prev->next = ps->a->next;
@@ -31,12 +30,12 @@ void move_sa(t_ps *ps)
 	ft_printf("sa\n");
 }
 
-void move_sb(t_ps *ps)
+void	move_sb(t_ps *ps)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (ps->b == NULL)
-		return;
+		return ;
 	tmp = ps->b->next->next;
 	tmp->prev = ps->b;
 	ps->b->prev->next = ps->b->next;

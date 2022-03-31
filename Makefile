@@ -6,7 +6,7 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/03/30 16:38:22 by vantonie         ###   ########.fr        #
+#    Updated: 2022/03/31 18:54:33 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,19 @@ CC = gcc
 
 LIBFT = ./libft/libft.a
 
-FILES = push_swap.c 	\
+FILES = checker.c		\
 		init.c			\
-		utils.c			\
+		main.c			\
+		medium.c		\
 		moves_push.c 	\
-		moves_swap.c	\
-		moves_rotate.c	\
 		moves_reverse.c	\
-		checker.c		\
-		sorters.c		\
-		quick_sort.c
+		moves_rotate.c	\
+		moves_swap.c	\
+		push_swap.c 	\
+		quick_sort.c	\
+		radix.c			\
+		small.c			\
+		utils.c			
 
 SRC=$(addprefix src/, $(FILES))
 

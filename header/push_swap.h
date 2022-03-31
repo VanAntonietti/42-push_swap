@@ -6,15 +6,15 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 17:33:03 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:53:57 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft/libft.h"
-#include <stdio.h>
+# include "../libft/libft.h"
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -47,17 +47,18 @@ void	init_list(t_ps *ps);
 void	finalize_struct(t_ps *ps);
 
 /*  ||							//\\ HELPERS //\\						||  */
-void	delete_stack(t_stack *stack);
-void	print_stack(t_stack *stack, int counter);
-void	print_binary(int binary);
-void	find_binary(t_ps *ps);
+void	quick_sort(int arr[], int low, int high);
+int		find_position(t_ps *ps, int n, t_stack *stack);
+int		normalize(t_ps *ps);
+int		find_smaller(t_ps *ps);
+int		find_bigger(t_ps *ps);
 
 /*  ||							//\\ SORTERS //\\						||  */
 void	push_swap(t_ps *ps);
 void	small_sort(t_ps *ps);
 void	medium_sort(t_ps *ps);
 void	radix_sort(t_ps *ps);
-void	sorters(t_ps *ps);
+void	push_swap(t_ps *ps);
 
 /*  ||							//\\ ERRORS //\\						||  */
 int		checker(t_ps *ps);
@@ -78,10 +79,5 @@ void	move_rrr(t_ps *ps);
 void	move_sa(t_ps *ps);
 void	move_sb(t_ps *ps);
 void	move_ss(t_ps *ps);
-
-unsigned int	count_bits(int n);
-void			quickSort(int arr[], int low, int high);
-int				find_position(t_ps *ps, int n, t_stack *stack);
-int				normalize(t_ps *ps);
 
 #endif

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 13:13:43 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:39:14 by vantonie         ###   ########.fr       */
+/*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
+/*   Updated: 2022/03/31 18:32:58 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_ps *ps)
+int	main(int argc, char **argv)
 {
-	if (ps->t_argc - 1 <= 3)
-		small_sort(ps);
-	else if (ps->t_argc - 1 <= 30)
-		medium_sort(ps);
-	else if (ps->t_argc -1 > 30)
-		radix_sort(ps);
+	t_ps	*ps;
+
+	ps = malloc(sizeof(t_ps));
+	ps->t_argc = argc;
+	ps->t_argv = argv;
+	init_struct(ps);
+	init_list(ps);
+	if (checker(ps) == 0 && normalize(ps) == 0)
+	{
+		push_swap(ps);
+	}
+	finalize_struct(ps);
+	return (0);
 }

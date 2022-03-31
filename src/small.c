@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   small.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 13:13:43 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:39:14 by vantonie         ###   ########.fr       */
+/*   Created: 2022/03/31 18:36:05 by vantonie          #+#    #+#             */
+/*   Updated: 2022/03/31 18:53:26 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_ps *ps)
+void	small_sort(t_ps *ps)
 {
-	if (ps->t_argc - 1 <= 3)
-		small_sort(ps);
-	else if (ps->t_argc - 1 <= 30)
-		medium_sort(ps);
-	else if (ps->t_argc -1 > 30)
-		radix_sort(ps);
+	int	smaller;
+	int	bigger;
+
+	smaller = find_smaller(ps);
+	bigger = find_bigger(ps);
+	if (smaller == 1 && bigger == 2)
+		move_sa(ps);
+	else if (smaller == 2 && bigger == 0)
+	{
+		move_sa(ps);
+		move_rra(ps);
+	}	
+	else if (smaller == 1 && bigger == 0)
+		move_ra(ps);
+	else if (smaller == 0 && bigger == 1)
+	{
+		move_sa(ps);
+		move_ra(ps);
+	}
+	else if (smaller == 2 && bigger == 1)
+		move_rra(ps);
 }

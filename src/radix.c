@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtol.c                                        :+:      :+:    :+:   */
+/*   radix.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/24 04:47:22 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:48:20 by vantonie         ###   ########.fr       */
+/*   Created: 2022/03/31 18:31:14 by vantonie          #+#    #+#             */
+/*   Updated: 2022/03/31 18:38:57 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "push_swap.h"
 
-long	ft_strtol(char *str)
+void	radix_sort(t_ps *ps)
 {
-	int		i;
-	int		sign;
-	long	result;
+	int	i;
+	int	j;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (str[i] == ' ' || str[i] == '\t'
-		|| str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-')
+	while (ps->sorted == FALSE)
 	{
-		sign = -1;
+		j = 0;
+		while (j < ps->t_argc - 1 && ps->sorted == FALSE)
+		{
+			if ((ps->a->n >> i & 1) == 1)
+				move_ra(ps);
+			else
+			{
+				move_pb(ps, ps->a);
+			}
+			j++;
+		}
+		while (ps->counter_b > 0)
+		{
+			move_pa(ps, ps->b);
+		}
 		i++;
+		is_sorted(ps);
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (result * sign);
 }

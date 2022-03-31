@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 14:19:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/29 20:17:25 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:43:41 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 int	checker(t_ps *ps)
 {
 	is_overflow(ps);
-	if(ps->overflow == TRUE)
+	if (ps->overflow == TRUE)
 	{
-		ft_printf("Error\nThe number is too big, please, use a number smaller then the max 32 bits integer.\n");
+		ft_printf("Error\n");
 	}
 	is_letter(ps);
-	if(ps->letter == TRUE)
+	if (ps->letter == TRUE)
 	{
-		ft_printf("Error\nThere is an invalid character in the list, please, use only numbers.\n");
+		ft_printf("Error\n");
 	}
 	is_repeated(ps);
-	if(ps->repeated == TRUE)
+	if (ps->repeated == TRUE)
 	{
-		ft_printf("Error\nThere is repeated numbers in the input list, please, remove the repeated numbers.\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	is_sorted(ps);
-	if(ps->sorted == TRUE)
+	if (ps->sorted == TRUE)
 	{	
-		ft_printf("Error\nThe list is already sorted, please, use a unsorted list.\n");
+		ft_printf("Error\n");
 		return (1);
 	}
 	return (0);
@@ -44,9 +44,10 @@ void	is_overflow(t_ps *ps)
 	int	i;
 
 	i = 1;
-	while(i < ps->t_argc)
+	while (i < ps->t_argc)
 	{
-		if(ft_strtol(ps->t_argv[i]) > INT_MAX || ft_strtol(ps->t_argv[i]) < INT_MIN)
+		if (ft_strtol(ps->t_argv[i]) > INT_MAX
+			|| ft_strtol(ps->t_argv[i]) < INT_MIN)
 		{	
 			printf("%ld\n", ft_strtol(ps->t_argv[i]));
 			ps->overflow = TRUE;
@@ -60,10 +61,10 @@ void	is_letter(t_ps *ps)
 	int	i;
 
 	i = 1;
-	while(i < ps->t_argc)
+	while (i < ps->t_argc)
 	{
-		if((*ps->t_argv[i] < '0' && *ps->t_argv[i] > '-') || *ps->t_argv[i] > '9' 
-			|| *ps->t_argv[i] < '-')
+		if ((*ps->t_argv[i] < '0' && *ps->t_argv[i] > '-')
+			|| *ps->t_argv[i] > '9' || *ps->t_argv[i] < '-')
 			ps->letter = TRUE;
 		i++;
 	}
@@ -73,14 +74,14 @@ void	is_repeated(t_ps *ps)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	while (i < ps->t_argc - 1)
 	{
 		j = i + 1;
-		while(j < ps->t_argc)
+		while (j < ps->t_argc)
 		{
-			if(ps->t_argv[i] == ps->t_argv[j])
+			if (ps->t_argv[i] == ps->t_argv[j])
 				ps->repeated = TRUE;
 			j++;
 		}
@@ -90,13 +91,13 @@ void	is_repeated(t_ps *ps)
 
 void	is_sorted(t_ps *ps)
 {
-	t_stack *stack;
-	int	i;
-	
+	int		i;
+	t_stack	*stack;
+
 	i = 1;
 	stack = ps->a;
 	ps->sorted = TRUE;
-	while(i < ps->t_argc - 1)
+	while (i < ps->t_argc - 1)
 	{
 		if (stack->n > stack->next->n)
 			ps->sorted = FALSE;
