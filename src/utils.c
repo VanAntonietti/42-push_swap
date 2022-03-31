@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 21:31:29 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/30 16:51:21 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:14:20 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,6 @@ unsigned int count_bits(int n)
 		n >>= 1;
 	}
 	return(i);
-}
-
-void	find_binary(t_ps *ps)
-{
-	t_stack *stack;
-	int		i;
-	int		max_bit_temp;
-	
-	i = 0;
-	stack = ps->a;
-	while(i < ps->counter_a)
-	{
-		max_bit_temp = count_bits(stack->n);
-		if(max_bit_temp > ps->sort->max_bitshift)
-			ps->sort->max_bitshift = max_bit_temp;
-		i++;
-		stack = stack->next;
-	}
 }
 
 int	find_position(t_ps *ps, int n, t_stack *stack)

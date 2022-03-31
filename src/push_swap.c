@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 15:27:37 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:55:30 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	main(int argc, char **argv)
 	{
 		sorters(ps);
 	}
-	// finalize_struct(ps);
-	free(ps);
+	finalize_struct(ps);
 	return 0;
 }
 

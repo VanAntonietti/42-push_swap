@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:13:43 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 15:47:23 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:50:14 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,8 +135,8 @@ void	sorters(t_ps *ps)
 {
 	if(ps->t_argc - 1 <= 3)
 		small_sort(ps);
-	else if(ps->t_argc - 1 < 15)
+	else if(ps->t_argc - 1 <= 30)
 		medium_sort(ps);
-	else if(ps->t_argc -1 >= 15)
+	else if(ps->t_argc -1 > 30)
 		radix_sort(ps);
 }

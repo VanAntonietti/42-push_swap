@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 16:24:08 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:04:21 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,29 @@ void	init_list(t_ps *ps)
 void	init_struct(t_ps *ps)
 {
 	ps->a = malloc(sizeof(t_stack));
-	if(ps->a == NULL)
-		printf("Error");
 	ps->b = NULL;
 	ps->first = NULL;
 	ps->last = NULL;
-	ps->sort = malloc(sizeof(t_sort));
 	ps->counter_a = ps->t_argc - 1;
 	ps->counter_b = 0;
 	ps->sorted = FALSE;
 	ps->repeated = FALSE;
 	ps->overflow = FALSE;
 	ps->letter = FALSE;
-	ps->sort->max_number = 0;
-	ps->origin = (malloc(ps->t_argc - 1*(sizeof(int))));
+	ps->origin = malloc((ps->t_argc - 1) * sizeof(int));
 }
 
 void	finalize_struct(t_ps *ps)
 {
-	free(ps->a);
-	free(ps->b);
-	free(ps->first);
-	free(ps->last);
+	t_stack *tmp;
+
+	while(ps->counter_a > 0)
+	{
+		tmp = ps->a->next;
+		free((void *)ps->a);
+		ps->a = tmp;
+		ps->counter_a--;
+	}
+	free(ps->origin);
+	free(ps);
 }

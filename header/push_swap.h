@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/30 17:55:52 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:33:03 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,6 @@ typedef struct s_stack
 	t_bool			edited;
 }			t_stack;
 
-typedef struct s_sort
-{
-	int max_number;
-	int	max_bitshift;
-	
-}			t_sort;
-
 typedef struct s_ps
 {
 	int		*origin;
@@ -46,7 +39,6 @@ typedef struct s_ps
 	t_stack	*b;
 	t_stack	*first;
 	t_stack	*last;
-	t_sort	*sort;
 }			t_ps;
 
 /*  ||						//\\ MAIN FUNCTIONS //\\					||  */
@@ -87,9 +79,9 @@ void	move_sa(t_ps *ps);
 void	move_sb(t_ps *ps);
 void	move_ss(t_ps *ps);
 
-unsigned int count_bits(int n);
-void quickSort(int arr[], int low, int high);
-int	find_position(t_ps *ps, int n, t_stack *stack);
-int normalize(t_ps *ps);
+unsigned int	count_bits(int n);
+void			quickSort(int arr[], int low, int high);
+int				find_position(t_ps *ps, int n, t_stack *stack);
+int				normalize(t_ps *ps);
 
 #endif
