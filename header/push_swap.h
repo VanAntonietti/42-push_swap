@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:53:57 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:26:09 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 
 typedef struct s_ps
 {
+	int		*i_argv;
 	int		*origin;
 	int		t_argc;
 	int		counter_a;
@@ -61,7 +62,8 @@ void	radix_sort(t_ps *ps);
 void	push_swap(t_ps *ps);
 
 /*  ||							//\\ ERRORS //\\						||  */
-int		checker(t_ps *ps);
+int		checker_before(t_ps *ps);
+int		checker_after(t_ps *ps);
 void	is_overflow(t_ps *ps);
 void	is_letter(t_ps *ps);
 void	is_repeated(t_ps *ps);

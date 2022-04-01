@@ -6,7 +6,7 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/03/31 18:54:33 by vantonie         ###   ########.fr        #
+#    Updated: 2022/04/01 18:53:44 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,19 @@ CC = gcc
 
 LIBFT = ./libft/libft.a
 
-FILES = checker.c		\
-		init.c			\
-		main.c			\
-		medium.c		\
-		moves_push.c 	\
-		moves_reverse.c	\
-		moves_rotate.c	\
-		moves_swap.c	\
-		push_swap.c 	\
-		quick_sort.c	\
-		radix.c			\
-		small.c			\
+FILES = checker_after.c		\
+		checker_before.c	\
+		init.c				\
+		main.c				\
+		medium.c			\
+		moves_push.c 		\
+		moves_reverse.c		\
+		moves_rotate.c		\
+		moves_swap.c		\
+		push_swap.c 		\
+		quick_sort.c		\
+		radix.c				\
+		small.c				\
 		utils.c			
 
 SRC=$(addprefix src/, $(FILES))
@@ -51,7 +52,7 @@ clean:
 
 fclean:
 	make fclean -C ./libft
-	rm -f $(NAME) 
+	rm -f $(NAME)
 
 re: fclean all
 

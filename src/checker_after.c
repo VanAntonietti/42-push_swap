@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   checker_after.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 14:19:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:43:41 by vantonie         ###   ########.fr       */
+/*   Created: 2022/04/01 18:47:43 by vantonie          #+#    #+#             */
+/*   Updated: 2022/04/01 20:41:24 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	checker(t_ps *ps)
+int	checker_after(t_ps *ps)
 {
-	is_overflow(ps);
-	if (ps->overflow == TRUE)
-	{
-		ft_printf("Error\n");
-	}
-	is_letter(ps);
-	if (ps->letter == TRUE)
-	{
-		ft_printf("Error\n");
-	}
 	is_repeated(ps);
 	if (ps->repeated == TRUE)
 	{
@@ -32,42 +22,8 @@ int	checker(t_ps *ps)
 	}
 	is_sorted(ps);
 	if (ps->sorted == TRUE)
-	{	
-		ft_printf("Error\n");
 		return (1);
-	}
 	return (0);
-}
-
-void	is_overflow(t_ps *ps)
-{
-	int	i;
-
-	i = 1;
-	while (i < ps->t_argc)
-	{
-		if (ft_strtol(ps->t_argv[i]) > INT_MAX
-			|| ft_strtol(ps->t_argv[i]) < INT_MIN)
-		{	
-			printf("%ld\n", ft_strtol(ps->t_argv[i]));
-			ps->overflow = TRUE;
-		}	
-		i++;
-	}
-}
-
-void	is_letter(t_ps *ps)
-{
-	int	i;
-
-	i = 1;
-	while (i < ps->t_argc)
-	{
-		if ((*ps->t_argv[i] < '0' && *ps->t_argv[i] > '-')
-			|| *ps->t_argv[i] > '9' || *ps->t_argv[i] < '-')
-			ps->letter = TRUE;
-		i++;
-	}
 }
 
 void	is_repeated(t_ps *ps)
@@ -78,10 +34,16 @@ void	is_repeated(t_ps *ps)
 	i = 0;
 	while (i < ps->t_argc - 1)
 	{
+		ps->i_argv[i] = ft_atoi(ps->t_argv[i + 1]);
+		i++;
+	}
+	i = 0;
+	while (i < ps->t_argc)
+	{
 		j = i + 1;
-		while (j < ps->t_argc)
+		while (j < ps->t_argc - 1)
 		{
-			if (ps->t_argv[i] == ps->t_argv[j])
+			if (ps->i_argv[i] == ps->i_argv[j])
 				ps->repeated = TRUE;
 			j++;
 		}

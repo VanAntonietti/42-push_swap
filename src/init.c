@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/03/31 18:39:48 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:26:46 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	init_struct(t_ps *ps)
 	ps->overflow = FALSE;
 	ps->letter = FALSE;
 	ps->origin = malloc((ps->t_argc - 1) * sizeof(int));
+	ps->i_argv = malloc((ps->t_argc - 1) * sizeof(int));
 }
 
 void	finalize_struct(t_ps *ps)
