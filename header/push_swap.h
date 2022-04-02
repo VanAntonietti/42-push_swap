@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:50:16 by vantonie          #+#    #+#             */
-/*   Updated: 2022/04/01 19:26:09 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/04/02 14:56:14 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -42,26 +41,22 @@ typedef struct s_ps
 	t_stack	*last;
 }			t_ps;
 
-/*  ||						//\\ MAIN FUNCTIONS //\\					||  */
 void	init_struct(t_ps *ps);
 void	init_list(t_ps *ps);
 void	finalize_struct(t_ps *ps);
 
-/*  ||							//\\ HELPERS //\\						||  */
 void	quick_sort(int arr[], int low, int high);
 int		find_position(t_ps *ps, int n, t_stack *stack);
 int		normalize(t_ps *ps);
 int		find_smaller(t_ps *ps);
 int		find_bigger(t_ps *ps);
 
-/*  ||							//\\ SORTERS //\\						||  */
 void	push_swap(t_ps *ps);
 void	small_sort(t_ps *ps);
 void	medium_sort(t_ps *ps);
 void	radix_sort(t_ps *ps);
 void	push_swap(t_ps *ps);
 
-/*  ||							//\\ ERRORS //\\						||  */
 int		checker_before(t_ps *ps);
 int		checker_after(t_ps *ps);
 void	is_overflow(t_ps *ps);
@@ -69,7 +64,6 @@ void	is_letter(t_ps *ps);
 void	is_repeated(t_ps *ps);
 void	is_sorted(t_ps *ps);
 
-/*  ||							//\\ MOVES //\\							||  */
 void	move_pa(t_ps *ps, t_stack *tmp);
 void	move_pb(t_ps *ps, t_stack *tmp);
 void	move_ra(t_ps *ps);

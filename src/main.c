@@ -6,7 +6,7 @@
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/04/01 20:08:18 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/04/02 15:01:06 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main(int argc, char **argv)
 			{
 				push_swap(ps);
 			}
-			finalize_struct(ps);
 		}
+		finalize_struct(ps);
 	}
 	return (0);
 }
