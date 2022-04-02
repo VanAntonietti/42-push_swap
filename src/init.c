@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/04/01 19:26:46 by vantonie         ###   ########.fr       */
+/*   Updated: 2022/04/02 02:13:06 by coder            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ void	finalize_struct(t_ps *ps)
 		ps->counter_a--;
 	}
 	free(ps->origin);
+	free(ps->i_argv);
 	free(ps);
 }
