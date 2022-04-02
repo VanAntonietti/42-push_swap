@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   dinit.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/27 18:57:26 by vantonie          #+#    #+#             */
-/*   Updated: 2022/04/02 15:01:06 by vantonie         ###   ########.fr       */
+/*   Created: 2022/04/02 20:16:12 by vantonie          #+#    #+#             */
+/*   Updated: 2022/04/02 20:29:18 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	finalize_struct(t_ps *ps)
 {
-	t_ps	*ps;
+	t_stack	*tmp;
 
-	if (argc > 1)
+	while (ps->counter_a > 0)
 	{
-		ps = malloc(sizeof(t_ps));
-		ps->t_argc = argc;
-		ps->t_argv = argv;
-		init_struct(ps);
-		if (checker_before(ps) == 0)
-		{
-			init_list(ps);
-			if (checker_after(ps) == 0 && normalize(ps) == 0)
-			{
-				push_swap(ps);
-			}
-		}
-		finalize_struct(ps);
+		tmp = ps->a->next;
+		free((void *)ps->a);
+		ps->a = tmp;
+		ps->counter_a--;
 	}
-	return (0);
+	free(ps->origin);
+	free(ps->i_argv);
 }

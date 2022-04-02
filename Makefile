@@ -6,7 +6,7 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/04/01 18:53:44 by vantonie         ###   ########.fr        #
+#    Updated: 2022/04/02 20:31:42 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ LIBFT = ./libft/libft.a
 
 FILES = checker_after.c		\
 		checker_before.c	\
+		dinit.c				\
 		init.c				\
 		main.c				\
 		medium.c			\
@@ -48,7 +49,6 @@ $(LIBFT):
 clean:
 	rm -f $(LIBFT_OBJS) $(NAME) $(NAME_BONUS)
 	make clean -C ./libft
-	rm -rf push_swap.dSYM
 
 fclean:
 	make fclean -C ./libft

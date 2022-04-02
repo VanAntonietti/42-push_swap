@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: coder <coder@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 15:13:14 by vantonie          #+#    #+#             */
-/*   Updated: 2022/04/02 02:13:06 by coder            ###   ########.fr       */
+/*   Updated: 2022/04/02 20:18:15 by vantonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,4 @@ void	init_struct(t_ps *ps)
 	ps->letter = FALSE;
 	ps->origin = malloc((ps->t_argc - 1) * sizeof(int));
 	ps->i_argv = malloc((ps->t_argc - 1) * sizeof(int));
-}
-
-void	finalize_struct(t_ps *ps)
-{
-	t_stack	*tmp;
-
-	while (ps->counter_a > 0)
-	{
-		tmp = ps->a->next;
-		free((void *)ps->a);
-		ps->a = tmp;
-		ps->counter_a--;
-	}
-	free(ps->origin);
-	free(ps->i_argv);
-	free(ps);
 }
