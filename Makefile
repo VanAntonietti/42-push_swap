@@ -6,13 +6,13 @@
 #    By: vantonie <vantonie@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/27 19:00:01 by vantonie          #+#    #+#              #
-#    Updated: 2022/04/02 15:51:50 by vantonie         ###   ########.fr        #
+#    Updated: 2022/04/03 15:24:34 by vantonie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=leak
+CFLAGS = -Wall -Wextra -Werror
 
 CC = gcc
 
